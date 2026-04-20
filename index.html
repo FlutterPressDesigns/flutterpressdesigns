@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flutter Press Designs | Brand · Event · Lifestyle Design Studio in New Braunfels, TX</title>
+  <meta name="description" content="Flutter Press Designs is a creative studio in New Braunfels, TX offering brand design, event graphics, AI art, custom music, digital prints, and social media content. Designed for brands and people who refuse to be boring."/>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Flutter Press Designs | Creative Studio in New Braunfels, TX"/>
+  <meta property="og:description" content="Brand design, event graphics, AI art, custom music, and digital prints. Bold, intentional, and a little bit magic."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://flutterpressdesigns.com"/>
+  <meta property="og:image" content="https://flutterpressdesigns.com/fpd-logo.jpeg"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Local Business Schema (for Google + GEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Flutter Press Designs",
+    "description": "Creative studio offering brand design, event graphics, AI art, custom music, and digital prints.",
+    "image": "https://flutterpressdesigns.com/fpd-logo.jpeg",
+    "url": "https://flutterpressdesigns.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "New Braunfels",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.etsy.com/shop/PaintedNights",
+      "https://www.tiktok.com/@gweenbeanies",
+      "https://www.facebook.com/FlutterPressDesigns",
+      "https://www.fiverr.com/s/GzwkLvq"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --pink:     #f472b6;
+      --lavender: #c084fc;
+      --indigo:   #818cf8;
+      --cyan:     #22d3ee;
+      --bg:       #fdf8ff;
+      --bg2:      #fef0f8;
+      --bg3:      #f5eeff;
+      --text:     #2d1a3e;
+      --text-dim: #7c6a8e;
+      --card-bg:  #ffffff;
+      --card-border: rgba(192,132,252,0.18);
+      --dark:     #04020c;
+      --dark2:    #110a22;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 70px;
+      background: rgba(253,248,255,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(192,132,252,0.15);
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-mark {
+      width: 52px; height: 52px; border-radius: 50%;
+      border: 2px solid var(--pink);
+      overflow: hidden; background: #04020c;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .nav-logo-mark img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+    .nav-name {
+      font-family: 'Sacramento', cursive;
+      font-size: 1.65rem;
+      background: linear-gradient(90deg, var(--pink), var(--lavender), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      white-space: nowrap;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--pink); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--pink), var(--lavender));
+      color: #fff !important; padding: 10px 22px; border-radius: 30px;
+      font-weight: 700 !important; transition: opacity 0.2s, transform 0.2s !important;
+    }
+    .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 120px 40px 80px;
+      position: relative; overflow: hidden;
+      background: radial-gradient(ellipse 70% 50% at 50% 30%, rgba(192,132,252,0.18) 0%, transparent 70%),
+                  radial-gradient(ellipse 40% 40% at 15% 85%, rgba(244,114,182,0.1) 0%, transparent 60%),
+                  radial-gradient(ellipse 40% 40% at 85% 10%, rgba(34,211,238,0.07) 0%, transparent 60%),
+                  var(--bg);
+    }
+
+    .hero-orb { position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none; }
+    .orb1 { width: 500px; height: 500px; background: rgba(192,132,252,0.12); top: -150px; left: -150px; }
+    .orb2 { width: 350px; height: 350px; background: rgba(244,114,182,0.08); bottom: -80px; right: -100px; }
+    .orb3 { width: 250px; height: 250px; background: rgba(34,211,238,0.06); bottom: 80px; left: 8%; }
+
+    .hero-badge {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 28px;
+      position: relative; z-index: 2;
+    }
+
+    .hero-logo-circle {
+      width: 240px; height: 240px; border-radius: 28px;
+      border: 2px solid rgba(244,114,182,0.45);
+      box-shadow: 0 0 50px rgba(192,132,252,0.2);
+      overflow: hidden; margin: 0 auto 36px;
+      background: #04020c;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 2;
+    }
+    .hero-logo-circle img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+
+    .hero-title {
+      font-family: 'Sacramento', cursive;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 1.1;
+      background: linear-gradient(90deg, var(--pink), var(--lavender), var(--indigo), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 18px;
+      white-space: nowrap;
+      position: relative; z-index: 2;
+    }
+
+    .hero-sub {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 28px;
+      position: relative; z-index: 2;
+    }
+    .hero-sub span { margin: 0 10px; }
+
+    .hero-desc {
+      font-size: 1.05rem; color: var(--text-dim);
+      max-width: 540px; line-height: 1.8; margin: 0 auto 52px;
+      position: relative; z-index: 2;
+    }
+
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 2; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--pink), var(--lavender));
+      color: #fff; padding: 14px 34px; border-radius: 40px;
+      font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 0.92rem;
+      text-decoration: none; box-shadow: 0 4px 24px rgba(244,114,182,0.28);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(244,114,182,0.38); }
+
+    .btn-outline {
+      background: transparent; color: var(--text); padding: 14px 34px; border-radius: 40px;
+      font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 0.92rem;
+      text-decoration: none; border: 1.5px solid rgba(44,26,62,0.18);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--lavender); color: var(--lavender); }
+
+    /* ── SHARED SECTION ── */
+    section { padding: 100px 40px; }
+    .section-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--pink); margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Georgia', serif; font-style: italic;
+      font-size: clamp(2rem, 4.5vw, 2.8rem); color: var(--text);
+      margin-bottom: 16px; line-height: 1.2;
+    }
+    .section-desc {
+      color: var(--text-dim); font-size: 1rem; line-height: 1.8; max-width: 560px;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: linear-gradient(180deg, var(--bg) 0%, var(--bg3) 100%); }
+    .services-header { margin-bottom: 60px; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .services-header .section-desc { margin: 0 auto; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; max-width: 1200px; margin: 0 auto;
+    }
+
+    /* FLIP CARD */
+    .flip-card { height: 320px; perspective: 1000px; cursor: pointer; }
+    .flip-card-inner {
+      position: relative; width: 100%; height: 100%;
+      transition: transform 0.65s cubic-bezier(0.4,0.2,0.2,1);
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+
+    .flip-front, .flip-back {
+      position: absolute; inset: 0; border-radius: 18px;
+      backface-visibility: hidden; -webkit-backface-visibility: hidden; overflow: hidden;
+    }
+
+    .flip-front {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-end; padding: 28px;
+    }
+    .flip-front img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+    }
+    .flip-front-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(4,2,12,0.75) 25%, transparent 65%);
+    }
+    .flip-front h3 {
+      position: relative; z-index: 2;
+      font-weight: 700; font-size: 1.05rem; color: #fff; text-align: center;
+    }
+
+    .flip-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(135deg, #ffffff, #fef0f8);
+      border: 1px solid rgba(192,132,252,0.25);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 36px 28px; text-align: center;
+    }
+    .flip-back-icon { font-size: 32px; margin-bottom: 14px; }
+    .flip-back h3 { font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 12px; }
+    .flip-back p { font-size: 0.86rem; color: var(--text-dim); line-height: 1.72; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg2); }
+    .about-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .about-img-frame {
+      border-radius: 18px; overflow: hidden;
+      aspect-ratio: 3/4; position: relative;
+      box-shadow: 0 20px 60px rgba(192,132,252,0.18);
+    }
+    .about-img-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .about-img-frame::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(4,2,12,0.65) 0%, transparent 45%);
+    }
+    .about-img-label { position: absolute; bottom: 24px; left: 24px; z-index: 3; }
+    .label-small {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(255,255,255,0.65);
+      display: block; margin-bottom: 4px;
+    }
+    .label-big {
+      font-family: 'Sacramento', cursive; font-size: 2.4rem;
+      color: #fff; text-shadow: 0 2px 16px rgba(0,0,0,0.6);
+    }
+
+    .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+    .about-tag {
+      display: flex; align-items: center; gap: 6px;
+      padding: 7px 14px; border-radius: 30px;
+      background: rgba(192,132,252,0.08);
+      border: 1px solid rgba(192,132,252,0.2);
+      font-size: 0.8rem; font-weight: 600; color: var(--text-dim);
+    }
+    .about-quote {
+      font-style: italic; font-size: 1.05rem; color: var(--pink);
+      border-left: 3px solid var(--pink);
+      padding-left: 20px; margin-bottom: 24px; line-height: 1.65;
+    }
+    .about-text p {
+      font-size: 0.95rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 14px;
+    }
+
+    /* ── SHOP ── */
+    #shop { background: var(--bg); }
+    .shop-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; max-width: 1100px; margin: 56px auto 0;
+    }
+    .shop-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 18px; padding: 36px 28px;
+      box-shadow: 0 2px 20px rgba(192,132,252,0.07);
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .shop-card:hover {
+      border-color: rgba(192,132,252,0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(192,132,252,0.13);
+    }
+    .shop-card-label {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px;
+    }
+    .shop-card h3 { font-weight: 700; font-size: 1.2rem; color: var(--text); margin-bottom: 12px; }
+    .shop-card p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.75; margin-bottom: 22px; }
+    .shop-link {
+      color: var(--pink); text-decoration: none;
+      font-size: 0.88rem; font-weight: 700;
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: gap 0.2s;
+    }
+    .shop-link:hover { gap: 10px; }
+
+    /* ── SOCIAL / CONNECT ── */
+    #connect { background: var(--bg3); text-align: center; }
+    .social-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px; max-width: 900px; margin: 52px auto 0;
+    }
+    .social-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 16px; padding: 28px 20px; text-decoration: none;
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      box-shadow: 0 2px 16px rgba(192,132,252,0.07);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .social-card:hover { border-color: var(--lavender); transform: translateY(-3px); }
+    .social-card-platform {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--text-dim);
+    }
+    .social-card-icon {
+      width: 50px; height: 50px; border-radius: 50%;
+      background: rgba(192,132,252,0.1); border: 1px solid rgba(192,132,252,0.2);
+      display: flex; align-items: center; justify-content: center; font-size: 22px;
+    }
+    .social-card h4 { font-weight: 700; font-size: 0.95rem; color: var(--text); }
+    .social-card p { font-size: 0.8rem; color: var(--text-dim); }
+
+    /* ── MUSIC ── */
+    #music {
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, #110a22 0%, var(--dark) 100%);
+      text-align: center; padding: 100px 40px; position: relative; overflow: hidden;
+    }
+    .music-dots {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(192,132,252,0.15) 1px, transparent 1px);
+      background-size: 28px 28px; pointer-events: none;
+    }
+    #music .section-label { color: var(--pink); position: relative; z-index: 1; }
+    #music .section-title { color: #e8d5f5; position: relative; z-index: 1; }
+    #music .section-desc { color: #a78bba; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+
+    .music-player-box {
+      max-width: 680px; margin: 52px auto 0;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(192,132,252,0.2);
+      border-radius: 20px; padding: 40px;
+      position: relative; z-index: 1;
+    }
+    .custom-player { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    .player-title { font-size: 0.82rem; color: #a78bba; letter-spacing: 0.08em; }
+    .play-btn {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--lavender));
+      border: none; cursor: pointer; font-size: 22px; color: #fff;
+      box-shadow: 0 4px 20px rgba(244,114,182,0.4);
+      transition: transform 0.2s; display: flex; align-items: center; justify-content: center;
+    }
+    .play-btn:hover { transform: scale(1.08); }
+    .player-progress { width: 100%; display: flex; align-items: center; gap: 14px; }
+    .progress-bar-wrap {
+      flex: 1; height: 4px; background: rgba(255,255,255,0.12);
+      border-radius: 4px; cursor: pointer; position: relative;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--pink), var(--lavender));
+      border-radius: 4px; width: 0%; transition: width 0.1s linear;
+    }
+    .player-time { font-size: 0.75rem; color: #a78bba; white-space: nowrap; min-width: 40px; }
+    .music-note { font-size: 0.8rem; color: #a78bba; font-style: italic; }
+
+    .btn-commission {
+      background: linear-gradient(135deg, var(--pink), var(--lavender));
+      color: #fff; padding: 14px 36px; border-radius: 40px;
+      font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 0.92rem;
+      text-decoration: none; box-shadow: 0 4px 24px rgba(244,114,182,0.3);
+      transition: transform 0.2s; border: none; cursor: pointer; display: inline-block;
+    }
+    .btn-commission:hover { transform: translateY(-2px); }
+
+    /* ── CTA ── */
+    #cta {
+      background: linear-gradient(180deg, var(--bg2) 0%, var(--bg3) 100%);
+      text-align: center; padding: 100px 40px;
+    }
+    .cta-inner { max-width: 640px; margin: 0 auto; }
+    .cta-title {
+      font-family: 'Georgia', serif; font-style: italic;
+      font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--text);
+      margin-bottom: 20px; line-height: 1.2;
+    }
+    .cta-desc { font-size: 1rem; color: var(--text-dim); line-height: 1.8; margin-bottom: 48px; }
+    .cta-buttons { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    .cta-secondary-links {
+      display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+    }
+    .cta-sec-link {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 22px; border-radius: 30px;
+      border: 1.5px solid rgba(44,26,62,0.15); text-decoration: none;
+      font-size: 0.85rem; font-weight: 600; color: var(--text-dim);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .cta-sec-link:hover { border-color: var(--lavender); color: var(--lavender); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); border-top: 1px solid rgba(244,114,182,0.1);
+      padding: 60px 40px 40px; text-align: center;
+    }
+    .footer-name {
+      font-family: 'Sacramento', cursive; font-size: 2.4rem;
+      background: linear-gradient(90deg, var(--pink), var(--lavender), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 14px;
+    }
+    .footer-sub {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #7c6a8e; margin-bottom: 24px;
+    }
+    .footer-links {
+      display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px;
+    }
+    .footer-links a {
+      font-size: 0.85rem; color: #7c6a8e; text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: rgba(124,106,142,0.4); }
+
+    /* ── FADE IN ── */
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 860px) {
+      .about-inner { grid-template-columns: 1fr; gap: 48px; }
+      .shop-grid, .social-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero-title { white-space: normal; font-size: clamp(2.4rem, 10vw, 3.5rem); }
+      section { padding: 72px 24px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">
+      <span class="nav-logo-mark"><img src="fpd-logo.jpeg" alt="Flutter Press Designs hummingbird logo"/></span>
+      <span class="nav-name">Flutter Press Designs</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#connect">Connect</a></li>
+      <li><a href="#cta" class="nav-cta">Work Together</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+    <div class="hero-orb orb3"></div>
+
+    <p class="hero-badge">Creative Studio &middot; New Braunfels, Texas</p>
+
+    <div class="hero-logo-circle">
+      <img src="fpd-logo.jpeg" alt="Flutter Press Designs neon hummingbird logo"/>
+    </div>
+
+    <h1 class="hero-title">Flutter Press Designs</h1>
+
+    <p class="hero-sub"><span>Brand</span>&middot;<span>Event</span>&middot;<span>Lifestyle</span></p>
+
+    <p class="hero-desc">Design, art, and music made for brands and people who actually want to be remembered &mdash; bold, intentional, and a little bit magic.</p>
+
+    <div class="hero-buttons">
+      <a href="#services" class="btn-primary">See What I Do</a>
+      <a href="#cta" class="btn-outline">Let's Create Together</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="services-header fade-in">
+      <p class="section-label">What I Do</p>
+      <h2 class="section-title">Services</h2>
+      <p class="section-desc">From brand identities to custom songs, digital wall art to event graphics &mdash; I help brands and people show up like themselves, but louder.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="flip-card fade-in">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <img src="branddesignandlogos.png" alt="Brand design and logo example"/>
+            <div class="flip-front-overlay"></div>
+            <h3>Brand Design &amp; Logos</h3>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-icon">&#128396;&#65039;</div>
+            <h3>Brand Design &amp; Logos</h3>
+            <p>Logos, full brand kits, color palettes, typography systems. Built to feel like YOU, not a stock template &mdash; for small businesses, personal brands, and weird beautiful ideas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card fade-in">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <img src="eventgraphics.png" alt="Wedding invitation suite on pink roses"/>
+            <div class="flip-front-overlay"></div>
+            <h3>Event Graphics</h3>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-icon">&#128141;</div>
+            <h3>Event Graphics</h3>
+            <p>Wedding invitations, event suites, save-the-dates, program booklets, signage. Custom-designed for weddings, launches, parties, and milestones worth remembering.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card fade-in">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <img src="ai-images.png" alt="AI-generated portrait art"/>
+            <div class="flip-front-overlay"></div>
+            <h3>AI-Generated Images</h3>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-icon">&#10024;</div>
+            <h3>AI-Generated Images</h3>
+            <p>Custom AI art for your brand, social content, wall prints, or that specific vision in your head. Character portraits, moodboards, stylized illustrations, or anything I can dream up.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card fade-in">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <img src="songsmadeforyou.png" alt="Colorful music waves illustration"/>
+            <div class="flip-front-overlay"></div>
+            <h3>Songs Made for You</h3>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-icon">&#127925;</div>
+            <h3>Songs Made for You</h3>
+            <p>Original AI-crafted music &mdash; brand intro tracks, podcast themes, background music, or a full song written about literally anything. Your prompt, my creative direction, your final track.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card fade-in">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <img src="digitalartsandprints.png" alt="Dark maximalist wall art gallery"/>
+            <div class="flip-front-overlay"></div>
+            <h3>Digital Art &amp; Prints</h3>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-icon">&#127912;</div>
+            <h3>Digital Art &amp; Prints</h3>
+            <p>Dark maximalist wall art sold instantly on Etsy through Painted Nights. Bold prints designed for homes that refuse to be boring &mdash; tigers, celestial serpents, baroque botanicals.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card fade-in">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <img src="socialmediacontent.png" alt="Phone with social media content on a lavender flatlay"/>
+            <div class="flip-front-overlay"></div>
+            <h3>Social Media Content</h3>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-icon">&#128241;</div>
+            <h3>Social Media Content</h3>
+            <p>Post templates, story graphics, content planning kits, and branded feed designs. Designed to look pulled-together without the full-time social manager price tag.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-inner">
+      <div class="about-img-frame fade-in">
+        <img src="disney.png" alt="Cece at Disney World"/>
+        <div class="about-img-label">
+          <span class="label-small">The Artist</span>
+          <span class="label-big">Hi, I'm Cece</span>
+        </div>
+      </div>
+
+      <div class="about-text fade-in">
+        <p class="section-label">About</p>
+
+        <div class="about-tags">
+          <span class="about-tag">&#11088; Swiftie Era</span>
+          <span class="about-tag">&#127984; Disney Adult</span>
+          <span class="about-tag">&#128062; Animal Lover</span>
+          <span class="about-tag">&#129504; Neurodivergent</span>
+          <span class="about-tag">&#128300; Science Is Cool</span>
+        </div>
+
+        <blockquote class="about-quote">
+          "I don't just make things look pretty. I make them feel like you."
+        </blockquote>
+
+        <p>I'm a multi-passionate creative based in New Braunfels, Texas &mdash; autistic, curious, and fully committed to going down rabbit holes at 2am in the name of a better design. Flutter Press Designs is where my obsessions live: brand identity, AI art, music creation, digital prints, and the endlessly fun chaos of making things from scratch.</p>
+
+        <p>I'm a Swiftie, a Disney Adult (that photo is proof), and an animal lover who thinks science is genuinely underrated. When I'm not designing, I'm probably making something weird with AI, watching animal videos, or listening to Taylor Swift on repeat and calling it market research.</p>
+
+        <p>Whether you need a logo, a custom song, or wall art for the moody corner of your living room &mdash; you've found the right weirdo for the job.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section id="shop">
+    <div style="max-width:1100px;margin:0 auto;">
+      <p class="section-label fade-in">Find My Work</p>
+      <h2 class="section-title fade-in">Shop &amp; collaborate</h2>
+      <p class="section-desc fade-in">Browse digital downloads on Etsy, hire me on Fiverr, or reach out directly.</p>
+
+      <div class="shop-grid">
+        <div class="shop-card fade-in">
+          <p class="shop-card-label">Etsy</p>
+          <h3>Painted Nights</h3>
+          <p>Dark maximalist wall art and digital downloads &mdash; bold, moody, statement pieces designed for spaces that don't do ordinary. Tiger prints and curated collections.</p>
+          <a href="https://www.etsy.com/shop/PaintedNights" target="_blank" rel="noopener" class="shop-link">Browse the shop &rarr;</a>
+        </div>
+
+        <div class="shop-card fade-in">
+          <p class="shop-card-label">Fiverr</p>
+          <h3>Hire Flutter Press</h3>
+          <p>Need a logo, a song, a full brand identity, or AI-generated art? Freelance services available on Fiverr &mdash; or just send me an email.</p>
+          <a href="https://www.fiverr.com/s/GzwkLvq" target="_blank" rel="noopener" class="shop-link">View my Fiverr &rarr;</a>
+        </div>
+
+        <div class="shop-card fade-in">
+          <p class="shop-card-label">Facebook Business</p>
+          <h3>Flutter Press Designs</h3>
+          <p>New work, releases, and whatever I happen to be creating that week. Follow along &mdash; it's more interesting than it sounds.</p>
+          <a href="https://www.facebook.com/FlutterPressDesigns" target="_blank" rel="noopener" class="shop-link">Follow on Facebook &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section id="connect">
+    <p class="section-label fade-in">Let's Stay Connected</p>
+    <h2 class="section-title fade-in" style="text-align:center;">Find me in the wild</h2>
+    <p class="section-desc fade-in" style="margin:0 auto;text-align:center;">Chaotic AI experiments, creative brain dumps, and the occasional unhinged idea that somehow works out perfectly.</p>
+
+    <div class="social-grid">
+      <a href="https://www.tiktok.com/@gweenbeanies" target="_blank" rel="noopener" class="social-card fade-in">
+        <span class="social-card-platform">TikTok</span>
+        <div class="social-card-icon">&#127925;</div>
+        <h4>@gweenbeanies</h4>
+        <p>Chaotic AI experiments &amp; brain dumps</p>
+      </a>
+      <a href="https://www.facebook.com/FlutterPressDesigns" target="_blank" rel="noopener" class="social-card fade-in">
+        <span class="social-card-platform">Facebook &mdash; Business</span>
+        <div class="social-card-icon">&#128216;</div>
+        <h4>Flutter Press Designs</h4>
+        <p>New releases &amp; creative updates</p>
+      </a>
+      <a href="https://www.facebook.com/iOSierra" target="_blank" rel="noopener" class="social-card fade-in">
+        <span class="social-card-platform">Facebook &mdash; Personal</span>
+        <div class="social-card-icon">&#128156;</div>
+        <h4>iOSierra</h4>
+        <p>The human behind the hummingbird</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- MUSIC -->
+  <section id="music">
+    <div class="music-dots"></div>
+    <p class="section-label fade-in">I Also Make Music</p>
+    <h2 class="section-title fade-in" style="text-align:center;">Songs Made for You</h2>
+    <p class="section-desc fade-in">Need a brand intro, a background track, a full song for your project &mdash; or just something weird and cool? I create original music using AI. Commission a custom track or drop me a message.</p>
+
+    <div class="music-player-box fade-in">
+      <audio id="fpd-audio" src="FPD.mp3" preload="metadata"></audio>
+      <div class="custom-player">
+        <p class="player-title">&#127925; Flutter Press Designs &mdash; Original Track</p>
+        <button class="play-btn" id="playBtn" onclick="togglePlay()">&#9654;</button>
+        <div class="player-progress">
+          <span class="player-time" id="currentTime">0:00</span>
+          <div class="progress-bar-wrap" id="progressWrap" onclick="seekAudio(event)">
+            <div class="progress-bar-fill" id="progressFill"></div>
+          </div>
+          <span class="player-time" id="totalTime">0:00</span>
+        </div>
+        <p class="music-note">Press play or click anywhere on the page &#10024;</p>
+        <a href="mailto:flutterpressdesigns@gmail.com" class="btn-commission">Commission a Song</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="cta-inner">
+      <p class="section-label fade-in">Work With Me</p>
+      <h2 class="cta-title fade-in">Let's make something worth talking about</h2>
+      <p class="cta-desc fade-in">Logo, brand kit, AI art, a song, event graphics, or something I haven't even thought of yet &mdash; I'm in. Let's talk about what you need.</p>
+      <div class="cta-buttons fade-in">
+        <a href="mailto:flutterpressdesigns@gmail.com" class="btn-primary">Send Me an Email</a>
+        <div class="cta-secondary-links">
+          <a href="https://www.etsy.com/shop/PaintedNights" target="_blank" rel="noopener" class="cta-sec-link">&#11088; Shop Etsy</a>
+          <a href="https://www.tiktok.com/@gweenbeanies" target="_blank" rel="noopener" class="cta-sec-link">&#127925; TikTok</a>
+          <a href="https://www.facebook.com/FlutterPressDesigns" target="_blank" rel="noopener" class="cta-sec-link">&#128216; Facebook</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-name">Flutter Press Designs</div>
+    <p class="footer-sub">Brand &middot; Event &middot; Lifestyle &middot; New Braunfels, TX</p>
+    <div class="footer-links">
+      <a href="mailto:flutterpressdesigns@gmail.com">flutterpressdesigns@gmail.com</a>
+      <a href="https://www.etsy.com/shop/PaintedNights" target="_blank" rel="noopener">Etsy: Painted Nights</a>
+      <a href="https://www.tiktok.com/@gweenbeanies" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/FlutterPressDesigns" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Flutter Press Designs. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll fade-in
+    const faders = document.querySelectorAll('.fade-in');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    faders.forEach(el => obs.observe(el));
+
+    // Audio
+    const audio = document.getElementById('fpd-audio');
+    const playBtn = document.getElementById('playBtn');
+    const pFill = document.getElementById('progressFill');
+    const curT = document.getElementById('currentTime');
+    const totT = document.getElementById('totalTime');
+
+    function fmt(s) {
+      const m = Math.floor(s/60), sec = Math.floor(s%60);
+      return m+':'+(sec<10?'0':'')+sec;
+    }
+    audio.addEventListener('timeupdate', () => {
+      if (!audio.duration) return;
+      pFill.style.width = (audio.currentTime/audio.duration*100)+'%';
+      curT.textContent = fmt(audio.currentTime);
+    });
+    audio.addEventListener('loadedmetadata', () => { totT.textContent = fmt(audio.duration); });
+    audio.addEventListener('play', () => { playBtn.innerHTML = '&#9646;&#9646;'; });
+    audio.addEventListener('pause', () => { playBtn.innerHTML = '&#9654;'; });
+
+    function togglePlay() {
+      if (audio.paused) audio.play(); else audio.pause();
+    }
+    function seekAudio(e) {
+      const r = document.getElementById('progressWrap').getBoundingClientRect();
+      audio.currentTime = ((e.clientX-r.left)/r.width)*audio.duration;
+    }
+
+    // Click anywhere to start music (first click only, doesn't interfere with links/buttons)
+    let hasAutoStarted = false;
+    document.addEventListener('click', (e) => {
+      if (hasAutoStarted) return;
+      // Don't interfere if they clicked the play button itself
+      if (e.target.closest('#playBtn') || e.target.closest('.progress-bar-wrap')) return;
+      hasAutoStarted = true;
+      audio.play().catch(() => {});
+    });
+  </script>
+
+</body>
+</html>
