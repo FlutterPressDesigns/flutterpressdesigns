@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio | Flutter Press Designs</title>
-  <meta name="description" content="Work samples from Flutter Press Designs — brand design, AI art, event graphics, custom music, and digital prints."/>
+  <title>My Work | Flutter Press Designs</title>
+  <meta name="description" content="AI art, digital prints, brand work, and more from Flutter Press Designs — browse my Higgsfield portfolio and Painted Nights Etsy shop."/>
   <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root{--pink:#f472b6;--lavender:#c084fc;--indigo:#818cf8;--cyan:#22d3ee;--bg:#fdf8ff;--bg2:#fef0f8;--bg3:#f5eeff;--text:#2d1a3e;--text-dim:#7c6a8e;--card-bg:#ffffff;--card-border:rgba(192,132,252,0.18);--dark:#04020c;}
@@ -30,28 +30,23 @@
     .page-title{font-family:'Georgia',serif;font-style:italic;font-size:clamp(2.5rem,6vw,4rem);color:var(--text);margin-bottom:20px;line-height:1.15;}
     .page-desc{font-size:1.05rem;color:var(--text-dim);max-width:560px;line-height:1.8;margin:0 auto;}
 
-    /* FILTER TABS */
-    .filter-bar{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:48px 40px 0;}
-    .filter-btn{padding:8px 20px;border-radius:30px;border:1.5px solid var(--card-border);background:transparent;font-family:'Quicksand',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-dim);cursor:pointer;transition:all 0.2s;}
-    .filter-btn:hover,.filter-btn.active{background:linear-gradient(135deg,var(--pink),var(--lavender));color:#fff;border-color:transparent;}
+    .hub-section{padding:60px 40px 100px;max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:28px;}
 
-    /* PORTFOLIO GRID */
-    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:48px auto;padding:0 40px;}
-    .portfolio-item{border-radius:16px;overflow:hidden;position:relative;aspect-ratio:1;cursor:pointer;background:var(--card-bg);border:1px solid var(--card-border);transition:transform 0.3s,box-shadow 0.3s;}
-    .portfolio-item:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(192,132,252,0.2);}
-    .portfolio-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;}
-    .portfolio-item:hover img{transform:scale(1.04);}
-    .portfolio-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(4,2,12,0.85) 0%,transparent 50%);opacity:0;transition:opacity 0.3s;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;}
-    .portfolio-item:hover .portfolio-overlay{opacity:1;}
-    .portfolio-cat{font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--pink);margin-bottom:6px;}
-    .portfolio-name{font-weight:700;font-size:0.95rem;color:#fff;}
+    .hub-card{border-radius:20px;border:1px solid var(--card-border);background:var(--card-bg);padding:44px 48px;display:flex;align-items:center;gap:36px;box-shadow:0 4px 24px rgba(192,132,252,0.08);transition:transform 0.25s,box-shadow 0.25s;text-decoration:none;color:inherit;}
+    .hub-card:hover{transform:translateY(-4px);box-shadow:0 12px 48px rgba(192,132,252,0.18);}
+    .hub-card.featured{background:linear-gradient(135deg,#ffffff 0%,#fef0f8 60%,#f5eeff 100%);border-color:rgba(244,114,182,0.25);}
+    .hub-card.placeholder{cursor:default;}
+    .hub-card.placeholder:hover{transform:none;box-shadow:0 4px 24px rgba(192,132,252,0.08);}
 
-    /* PLACEHOLDER ITEMS */
-    .placeholder-item{background:linear-gradient(135deg,var(--bg2),var(--bg3));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:2px dashed rgba(192,132,252,0.25);}
-    .placeholder-icon{font-size:2rem;opacity:0.5;}
-    .placeholder-label{font-size:0.78rem;font-weight:600;color:var(--text-dim);opacity:0.7;text-align:center;}
-
-    .coming-soon-note{text-align:center;padding:32px 40px 80px;font-size:0.9rem;color:var(--text-dim);font-style:italic;}
+    .hub-card-icon{font-size:2.8rem;flex-shrink:0;}
+    .hub-card-body{flex:1;}
+    .hub-card-tag{font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--pink);margin-bottom:12px;}
+    .hub-card-tag.muted{color:var(--text-dim);}
+    .hub-card-title{font-family:'Georgia',serif;font-style:italic;font-size:clamp(1.4rem,2.5vw,1.9rem);color:var(--text);margin-bottom:12px;line-height:1.25;}
+    .hub-card-title.dim{color:var(--text-dim);}
+    .hub-card-desc{font-size:0.93rem;color:var(--text-dim);line-height:1.8;}
+    .hub-card-arrow{font-size:1.5rem;color:var(--pink);opacity:0.7;flex-shrink:0;transition:transform 0.2s,opacity 0.2s;}
+    .hub-card:hover .hub-card-arrow{transform:translateX(6px);opacity:1;}
 
     .cta-band{background:linear-gradient(135deg,var(--bg2),var(--bg3));padding:80px 40px;text-align:center;}
     .cta-band h2{font-family:'Georgia',serif;font-style:italic;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--text);margin-bottom:16px;}
@@ -70,9 +65,7 @@
     .fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
     .fade-in.visible{opacity:1;transform:none;}
 
-    @media(max-width:900px){.portfolio-grid{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:700px){nav{padding:0 20px;}.nav-links{display:none;}.portfolio-grid{grid-template-columns:1fr 1fr;padding:0 20px;}}
-    @media(max-width:480px){.portfolio-grid{grid-template-columns:1fr;}}
+    @media(max-width:700px){nav{padding:0 20px;}.nav-links{display:none;}.hub-section{padding:40px 20px 60px;}.hub-card{flex-direction:column;align-items:flex-start;gap:16px;padding:28px 24px;}.hub-card-arrow{display:none;}}
   </style>
 </head>
 <body>
@@ -95,90 +88,46 @@
     <div class="hero-orb orb1"></div>
     <div class="hero-orb orb2"></div>
     <p class="page-label">The Work</p>
-    <h1 class="page-title">Portfolio</h1>
-    <p class="page-desc">A growing collection of brand identities, AI art, event graphics, digital prints, and more. Updated as new work comes in.</p>
+    <h1 class="page-title">My Work</h1>
+    <p class="page-desc">AI art, digital prints, brand work, and more &mdash; a growing collection across platforms. Click through to explore.</p>
   </div>
 
-  <div class="filter-bar">
-    <button class="filter-btn active" onclick="filterItems('all')">All</button>
-    <button class="filter-btn" onclick="filterItems('brand')">Brand</button>
-    <button class="filter-btn" onclick="filterItems('ai-art')">AI Art</button>
-    <button class="filter-btn" onclick="filterItems('event')">Event</button>
-    <button class="filter-btn" onclick="filterItems('prints')">Prints</button>
-    <button class="filter-btn" onclick="filterItems('social')">Social</button>
-  </div>
+  <div class="hub-section">
 
-  <div class="portfolio-grid" id="portfolioGrid">
-
-    <!-- Portfolio items -->
-    <div class="portfolio-item fade-in" data-cat="brand">
-      <img src="branddesignandlogos.png" alt="Brand design work"/>
-      <div class="portfolio-overlay">
-        <p class="portfolio-cat">Brand</p>
-        <p class="portfolio-name">Brand Design &amp; Logos</p>
+    <a href="https://higgsfield.ai/@crimsonsweetheart" target="_blank" rel="noopener" class="hub-card featured fade-in">
+      <div class="hub-card-icon">&#10024;</div>
+      <div class="hub-card-body">
+        <p class="hub-card-tag">AI Art &amp; Video</p>
+        <h2 class="hub-card-title">Higgsfield Portfolio</h2>
+        <p class="hub-card-desc">Browse my full AI art and video portfolio &mdash; character portraits, stylized scenes, experimental generations, and more. Hosted on Higgsfield.</p>
       </div>
-    </div>
-
-    <div class="portfolio-item fade-in" data-cat="event">
-      <img src="eventgraphics.png" alt="Event graphics"/>
-      <div class="portfolio-overlay">
-        <p class="portfolio-cat">Event</p>
-        <p class="portfolio-name">Event Graphics Suite</p>
-      </div>
-    </div>
-
-    <a href="https://higgsfield.ai/@crimsonsweetheart" target="_blank" rel="noopener" class="portfolio-item fade-in" data-cat="ai-art">
-      <img src="ai-images.png" alt="AI generated art"/>
-      <div class="portfolio-overlay">
-        <p class="portfolio-cat">AI Art</p>
-        <p class="portfolio-name">AI-Generated Images</p>
-      </div>
+      <div class="hub-card-arrow">&rarr;</div>
     </a>
 
-    <a href="https://www.etsy.com/shop/PaintedNights" target="_blank" rel="noopener" class="portfolio-item fade-in" data-cat="prints">
-      <img src="y2k-bedroom.png" alt="Digital prints"/>
-      <div class="portfolio-overlay">
-        <p class="portfolio-cat">Prints</p>
-        <p class="portfolio-name">Digital Art &amp; Prints</p>
+    <a href="https://www.etsy.com/shop/PaintedNights" target="_blank" rel="noopener" class="hub-card fade-in">
+      <div class="hub-card-icon">&#127912;</div>
+      <div class="hub-card-body">
+        <p class="hub-card-tag">Digital Prints</p>
+        <h2 class="hub-card-title">Painted Nights on Etsy</h2>
+        <p class="hub-card-desc">Canvas wall art, Y2K, dopamine decor, Gimme Gummy prints &mdash; bold, maximalist pieces made to order in the US and shipped to your door.</p>
       </div>
+      <div class="hub-card-arrow">&rarr;</div>
     </a>
 
-    <div class="portfolio-item fade-in" data-cat="social">
-      <img src="socialmediacontent.png" alt="Social media content"/>
-      <div class="portfolio-overlay">
-        <p class="portfolio-cat">Social</p>
-        <p class="portfolio-name">Social Media Content</p>
+    <div class="hub-card placeholder fade-in">
+      <div class="hub-card-icon" style="opacity:0.35;">&#128396;&#65039;</div>
+      <div class="hub-card-body">
+        <p class="hub-card-tag muted">Coming Soon</p>
+        <h2 class="hub-card-title dim">More on the way</h2>
+        <p class="hub-card-desc">Music commissions, brand work, and new collections are being added. Check back soon or follow along on social for new drops.</p>
       </div>
-    </div>
-
-    <!-- Placeholder slots for upcoming work -->
-    <div class="portfolio-item placeholder-item fade-in" data-cat="brand">
-      <div class="placeholder-icon">&#128396;&#65039;</div>
-      <div class="placeholder-label">More brand work<br/>coming soon</div>
-    </div>
-
-    <div class="portfolio-item placeholder-item fade-in" data-cat="ai-art">
-      <div class="placeholder-icon">&#10024;</div>
-      <div class="placeholder-label">More AI art<br/>coming soon</div>
-    </div>
-
-    <div class="portfolio-item placeholder-item fade-in" data-cat="prints">
-      <div class="placeholder-icon">&#127912;</div>
-      <div class="placeholder-label">More prints<br/>coming soon</div>
-    </div>
-
-    <div class="portfolio-item placeholder-item fade-in" data-cat="event">
-      <div class="placeholder-icon">&#128141;</div>
-      <div class="placeholder-label">More event work<br/>coming soon</div>
     </div>
 
   </div>
-
-  <p class="coming-soon-note">Portfolio is actively growing &mdash; check back often or follow along on <a href="https://www.facebook.com/FlutterPressDesigns" target="_blank" style="color:var(--pink);">Facebook</a> and <a href="https://www.tiktok.com/@gweenbeanies" target="_blank" style="color:var(--pink);">TikTok</a> for new work.</p>
 
   <div class="cta-band">
-    <h2>Like what you see?</h2>
-    <p>Let's make something for you. Reach out and tell me what you're working on.</p>
+    <h2>Want something made for you?</h2>
+    <p>Reach out and let's build something together.</p>
     <a href="contact.html" class="btn-primary">Start a Project &rarr;</a>
   </div>
 
@@ -198,15 +147,6 @@
     const faders=document.querySelectorAll('.fade-in');
     const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:0.1});
     faders.forEach(el=>obs.observe(el));
-
-    function filterItems(cat){
-      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-      event.target.classList.add('active');
-      document.querySelectorAll('.portfolio-item').forEach(item=>{
-        if(cat==='all'||item.dataset.cat===cat){item.style.display='block';}
-        else{item.style.display='none';}
-      });
-    }
   </script>
 </body>
 </html>
