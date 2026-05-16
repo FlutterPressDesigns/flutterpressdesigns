@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services | Flutter Press Designs</title>
+  <meta name="description" content="Brand design, event graphics, AI art, custom music, digital prints, and social media content. Flutter Press Designs — New Braunfels, TX."/>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--pink:#f472b6;--lavender:#c084fc;--indigo:#818cf8;--cyan:#22d3ee;--bg:#fdf8ff;--bg2:#fef0f8;--bg3:#f5eeff;--text:#2d1a3e;--text-dim:#7c6a8e;--card-bg:#ffffff;--card-border:rgba(192,132,252,0.18);--dark:#04020c;--dark2:#110a22;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Quicksand',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:70px;background:rgba(253,248,255,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(192,132,252,0.15);}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .nav-logo-mark{width:52px;height:52px;border-radius:50%;border:2px solid var(--pink);overflow:hidden;background:#04020c;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .nav-logo-mark img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+    .nav-name{font-family:'Sacramento',cursive;font-size:1.65rem;background:linear-gradient(90deg,var(--pink),var(--lavender),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap;}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+    .nav-links a{text-decoration:none;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--pink);}
+    .nav-cta{background:linear-gradient(135deg,var(--pink),var(--lavender));color:#fff!important;padding:10px 22px;border-radius:30px;font-weight:700!important;transition:opacity 0.2s,transform 0.2s!important;}
+    .nav-cta:hover{opacity:0.88;transform:translateY(-1px);}
+
+    .page-hero{padding:160px 40px 80px;text-align:center;background:radial-gradient(ellipse 70% 50% at 50% 30%,rgba(192,132,252,0.18) 0%,transparent 70%),var(--bg);position:relative;overflow:hidden;}
+    .hero-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;}
+    .orb1{width:400px;height:400px;background:rgba(192,132,252,0.1);top:-100px;left:-100px;}
+    .orb2{width:300px;height:300px;background:rgba(244,114,182,0.07);bottom:-60px;right:-80px;}
+    .page-label{font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-dim);margin-bottom:20px;}
+    .page-title{font-family:'Georgia',serif;font-style:italic;font-size:clamp(2.5rem,6vw,4rem);color:var(--text);margin-bottom:20px;line-height:1.15;}
+    .page-desc{font-size:1.05rem;color:var(--text-dim);max-width:560px;line-height:1.8;margin:0 auto;}
+
+    .services-section{padding:80px 40px;max-width:1200px;margin:0 auto;}
+    .service-block{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:60px 0;border-bottom:1px solid var(--card-border);}
+    .service-block:last-child{border-bottom:none;}
+    .service-block.reverse{direction:rtl;}
+    .service-block.reverse > *{direction:ltr;}
+    .service-img{border-radius:18px;overflow:hidden;aspect-ratio:4/3;position:relative;box-shadow:0 12px 40px rgba(192,132,252,0.15);}
+    .service-img img{width:100%;height:100%;object-fit:cover;}
+    .service-img-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(192,132,252,0.15),rgba(244,114,182,0.1));}
+    .service-content .service-icon{font-size:2.5rem;margin-bottom:16px;}
+    .service-tag{font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--pink);margin-bottom:12px;}
+    .service-title{font-family:'Georgia',serif;font-style:italic;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--text);margin-bottom:16px;line-height:1.2;}
+    .service-desc{font-size:0.95rem;color:var(--text-dim);line-height:1.85;margin-bottom:24px;}
+    .service-includes{list-style:none;margin-bottom:28px;}
+    .service-includes li{font-size:0.88rem;color:var(--text-dim);padding:6px 0;border-bottom:1px solid rgba(192,132,252,0.1);display:flex;align-items:center;gap:10px;}
+    .service-includes li::before{content:'✦';color:var(--pink);font-size:0.7rem;flex-shrink:0;}
+    .btn-primary{background:linear-gradient(135deg,var(--pink),var(--lavender));color:#fff;padding:12px 28px;border-radius:40px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:0.88rem;text-decoration:none;box-shadow:0 4px 20px rgba(244,114,182,0.25);transition:transform 0.2s,box-shadow 0.2s;display:inline-block;}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(244,114,182,0.38);}
+
+    .cta-band{background:linear-gradient(135deg,var(--bg2),var(--bg3));padding:80px 40px;text-align:center;}
+    .cta-band h2{font-family:'Georgia',serif;font-style:italic;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--text);margin-bottom:16px;}
+    .cta-band p{font-size:1rem;color:var(--text-dim);margin-bottom:36px;line-height:1.8;}
+
+    footer{background:var(--dark);border-top:1px solid rgba(244,114,182,0.1);padding:60px 40px 40px;text-align:center;}
+    .footer-name{font-family:'Sacramento',cursive;font-size:2.4rem;background:linear-gradient(90deg,var(--pink),var(--lavender),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px;}
+    .footer-sub{font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#7c6a8e;margin-bottom:24px;}
+    .footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;}
+    .footer-links a{font-size:0.85rem;color:#7c6a8e;text-decoration:none;transition:color 0.2s;}
+    .footer-links a:hover{color:var(--pink);}
+    .footer-copy{font-size:0.75rem;color:rgba(124,106,142,0.4);}
+
+    .fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .fade-in.visible{opacity:1;transform:none;}
+
+    @media(max-width:860px){.service-block{grid-template-columns:1fr;gap:32px;}.service-block.reverse{direction:ltr;}}
+    @media(max-width:700px){nav{padding:0 20px;}.nav-links{display:none;}body{padding-top:0;}.services-section{padding:40px 24px;}}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-mark"><img src="fpd-logo.jpeg" alt="Flutter Press Designs hummingbird logo"/></span>
+      <span class="nav-name">Flutter Press Designs</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="contact.html" class="nav-cta">Work Together</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+    <p class="page-label">What I Do</p>
+    <h1 class="page-title">Services</h1>
+    <p class="page-desc">From brand identities to custom songs, digital wall art to event graphics &mdash; I help brands and people show up like themselves, but louder.</p>
+  </div>
+
+  <div class="services-section">
+
+    <div class="service-block fade-in">
+      <div class="service-img">
+        <img src="branddesignandlogos.png" alt="Brand design and logos"/>
+        <div class="service-img-overlay"></div>
+      </div>
+      <div class="service-content">
+        <div class="service-icon">&#128396;&#65039;</div>
+        <p class="service-tag">Brand Identity</p>
+        <h2 class="service-title">Brand Design &amp; Logos</h2>
+        <p class="service-desc">Logos, full brand kits, color palettes, and typography systems. Built to feel like YOU, not a stock template &mdash; for small businesses, personal brands, and weird beautiful ideas that deserve a real identity.</p>
+        <ul class="service-includes">
+          <li>Logo design (primary + variations)</li>
+          <li>Color palette with hex codes</li>
+          <li>Typography system &amp; font pairings</li>
+          <li>Brand guidelines document</li>
+          <li>Social media profile graphic</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">Commission This &rarr;</a>
+      </div>
+    </div>
+
+    <div class="service-block reverse fade-in">
+      <div class="service-img">
+        <img src="eventgraphics.png" alt="Event graphics and invitations"/>
+        <div class="service-img-overlay"></div>
+      </div>
+      <div class="service-content">
+        <div class="service-icon">&#128141;</div>
+        <p class="service-tag">Events &amp; Occasions</p>
+        <h2 class="service-title">Event Graphics</h2>
+        <p class="service-desc">Wedding invitations, event suites, save-the-dates, program booklets, signage. Custom-designed for weddings, launches, parties, and milestones worth remembering.</p>
+        <ul class="service-includes">
+          <li>Custom invitation design</li>
+          <li>Matching suite items (RSVP, details card, envelope liner)</li>
+          <li>Digital files ready to print or send</li>
+          <li>Event signage and day-of graphics</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">Commission This &rarr;</a>
+      </div>
+    </div>
+
+    <div class="service-block fade-in">
+      <div class="service-img">
+        <img src="ai-images.png" alt="AI generated art"/>
+        <div class="service-img-overlay"></div>
+      </div>
+      <div class="service-content">
+        <div class="service-icon">&#10024;</div>
+        <p class="service-tag">AI Art</p>
+        <h2 class="service-title">AI-Generated Images</h2>
+        <p class="service-desc">Custom AI art for your brand, social content, wall prints, or that specific vision in your head. Character portraits, moodboards, stylized illustrations, or anything I can dream up with a prompt and a plan.</p>
+        <ul class="service-includes">
+          <li>Custom AI image generation using professional tools</li>
+          <li>High-resolution output (upscaled to 300dpi)</li>
+          <li>Multiple variations to choose from</li>
+          <li>Delivered as downloadable files</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">Commission This &rarr;</a>
+      </div>
+    </div>
+
+    <div class="service-block reverse fade-in">
+      <div class="service-img">
+        <img src="songsmadeforyou.png" alt="Custom music creation"/>
+        <div class="service-img-overlay"></div>
+      </div>
+      <div class="service-content">
+        <div class="service-icon">&#127925;</div>
+        <p class="service-tag">Custom Music</p>
+        <h2 class="service-title">Songs Made for You</h2>
+        <p class="service-desc">Original AI-crafted music &mdash; brand intro tracks, podcast themes, background music, or a full song written about literally anything. Your prompt, my creative direction, your final track.</p>
+        <ul class="service-includes">
+          <li>Custom song or instrumental track</li>
+          <li>Multiple style options</li>
+          <li>Delivered as MP3 or WAV</li>
+          <li>Full commercial use rights</li>
+        </ul>
+        <a href="music.html" class="btn-primary">Hear a Sample &rarr;</a>
+      </div>
+    </div>
+
+    <div class="service-block fade-in">
+      <div class="service-img">
+        <img src="digitalartsandprints.png" alt="Digital art and prints"/>
+        <div class="service-img-overlay"></div>
+      </div>
+      <div class="service-content">
+        <div class="service-icon">&#127912;</div>
+        <p class="service-tag">Digital Art</p>
+        <h2 class="service-title">Digital Art &amp; Prints</h2>
+        <p class="service-desc">Dark maximalist wall art available on Etsy through Painted Nights. Bold prints designed for homes that refuse to be boring &mdash; tigers, celestial serpents, baroque botanicals, moody statement pieces.</p>
+        <ul class="service-includes">
+          <li>Ready-to-hang canvas prints via Etsy</li>
+          <li>Custom digital prints on commission</li>
+          <li>Multiple size options</li>
+          <li>Print-on-demand fulfillment</li>
+        </ul>
+        <a href="https://www.etsy.com/shop/PaintedNights" target="_blank" rel="noopener" class="btn-primary">Shop Painted Nights &rarr;</a>
+      </div>
+    </div>
+
+    <div class="service-block reverse fade-in">
+      <div class="service-img">
+        <img src="socialmediacontent.png" alt="Social media content design"/>
+        <div class="service-img-overlay"></div>
+      </div>
+      <div class="service-content">
+        <div class="service-icon">&#128241;</div>
+        <p class="service-tag">Social Media</p>
+        <h2 class="service-title">Social Media Content</h2>
+        <p class="service-desc">Post templates, story graphics, content planning kits, and branded feed designs. Designed to look pulled-together without the full-time social manager price tag.</p>
+        <ul class="service-includes">
+          <li>Branded post templates</li>
+          <li>Story graphics and highlight covers</li>
+          <li>Content calendar template</li>
+          <li>Customized to your brand colors and voice</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">Commission This &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cta-band">
+    <h2>Ready to start something?</h2>
+    <p>Not sure which service is right for you? Send me a message and we'll figure it out together.</p>
+    <a href="contact.html" class="btn-primary">Let's Talk &rarr;</a>
+  </div>
+
+  <footer>
+    <div class="footer-name">Flutter Press Designs</div>
+    <p class="footer-sub">Brand &middot; Event &middot; Lifestyle &middot; New Braunfels, TX</p>
+    <div class="footer-links">
+      <a href="mailto:flutterpressdesigns@gmail.com">flutterpressdesigns@gmail.com</a>
+      <a href="https://www.etsy.com/shop/PaintedNights" target="_blank" rel="noopener">Etsy: Painted Nights</a>
+      <a href="https://www.tiktok.com/@gweenbeanies" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/FlutterPressDesigns" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Flutter Press Designs. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const faders=document.querySelectorAll('.fade-in');
+    const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:0.1});
+    faders.forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>

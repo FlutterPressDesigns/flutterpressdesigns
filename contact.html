@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Flutter Press Designs</title>
+  <meta name="description" content="Commission Flutter Press Designs for brand design, AI art, custom music, event graphics, and more. New Braunfels, TX."/>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--pink:#f472b6;--lavender:#c084fc;--indigo:#818cf8;--cyan:#22d3ee;--bg:#fdf8ff;--bg2:#fef0f8;--bg3:#f5eeff;--text:#2d1a3e;--text-dim:#7c6a8e;--card-bg:#ffffff;--card-border:rgba(192,132,252,0.18);--dark:#04020c;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Quicksand',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:70px;background:rgba(253,248,255,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(192,132,252,0.15);}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .nav-logo-mark{width:52px;height:52px;border-radius:50%;border:2px solid var(--pink);overflow:hidden;background:#04020c;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .nav-logo-mark img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+    .nav-name{font-family:'Sacramento',cursive;font-size:1.65rem;background:linear-gradient(90deg,var(--pink),var(--lavender),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap;}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+    .nav-links a{text-decoration:none;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--pink);}
+    .nav-cta{background:linear-gradient(135deg,var(--pink),var(--lavender));color:#fff!important;padding:10px 22px;border-radius:30px;font-weight:700!important;transition:opacity 0.2s,transform 0.2s!important;}
+    .nav-cta:hover{opacity:0.88;transform:translateY(-1px);}
+
+    .contact-page{min-height:100vh;padding:140px 40px 100px;display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1100px;margin:0 auto;align-items:start;}
+
+    /* LEFT SIDE */
+    .contact-info .section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink);margin-bottom:14px;}
+    .contact-title{font-family:'Georgia',serif;font-style:italic;font-size:clamp(2rem,4vw,3rem);color:var(--text);margin-bottom:20px;line-height:1.2;}
+    .contact-desc{font-size:1rem;color:var(--text-dim);line-height:1.85;margin-bottom:40px;}
+    .contact-detail{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+    .contact-detail-icon{width:40px;height:40px;border-radius:10px;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+    .contact-detail-text a{color:var(--text);text-decoration:none;font-weight:600;font-size:0.95rem;transition:color 0.2s;}
+    .contact-detail-text a:hover{color:var(--pink);}
+    .contact-detail-text p{color:var(--text-dim);font-size:0.82rem;margin-top:2px;}
+    .social-row{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;}
+    .social-pill{display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:30px;border:1.5px solid var(--card-border);text-decoration:none;font-size:0.8rem;font-weight:600;color:var(--text-dim);transition:all 0.2s;}
+    .social-pill:hover{border-color:var(--lavender);color:var(--lavender);}
+
+    /* FORM */
+    .contact-form-wrap{background:var(--card-bg);border:1px solid var(--card-border);border-radius:24px;padding:40px;box-shadow:0 8px 40px rgba(192,132,252,0.08);}
+    .form-title{font-family:'Georgia',serif;font-style:italic;font-size:1.4rem;color:var(--text);margin-bottom:28px;}
+    .form-group{margin-bottom:20px;}
+    .form-group label{display:block;font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1.5px solid var(--card-border);border-radius:10px;font-family:'Quicksand',sans-serif;font-size:0.92rem;color:var(--text);background:var(--bg);transition:border-color 0.2s;outline:none;}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--lavender);}
+    .form-group textarea{resize:vertical;min-height:110px;line-height:1.6;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    .btn-submit{width:100%;background:linear-gradient(135deg,var(--pink),var(--lavender));color:#fff;padding:14px;border-radius:40px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:0.95rem;border:none;cursor:pointer;box-shadow:0 4px 24px rgba(244,114,182,0.28);transition:transform 0.2s,box-shadow 0.2s;margin-top:8px;}
+    .btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(244,114,182,0.38);}
+    .form-note{font-size:0.78rem;color:var(--text-dim);text-align:center;margin-top:14px;line-height:1.6;}
+
+    footer{background:var(--dark);border-top:1px solid rgba(244,114,182,0.1);padding:60px 40px 40px;text-align:center;}
+    .footer-name{font-family:'Sacramento',cursive;font-size:2.4rem;background:linear-gradient(90deg,var(--pink),var(--lavender),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px;}
+    .footer-sub{font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#7c6a8e;margin-bottom:24px;}
+    .footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;}
+    .footer-links a{font-size:0.85rem;color:#7c6a8e;text-decoration:none;transition:color 0.2s;}
+    .footer-links a:hover{color:var(--pink);}
+    .footer-copy{font-size:0.75rem;color:rgba(124,106,142,0.4);}
+
+    .fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .fade-in.visible{opacity:1;transform:none;}
+
+    @media(max-width:860px){.contact-page{grid-template-columns:1fr;gap:40px;padding:120px 24px 80px;}}
+    @media(max-width:700px){nav{padding:0 20px;}.nav-links{display:none;}.form-row{grid-template-columns:1fr;}.contact-form-wrap{padding:24px;}}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-mark"><img src="fpd-logo.jpeg" alt="Flutter Press Designs hummingbird logo"/></span>
+      <span class="nav-name">Flutter Press Designs</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="contact.html" class="active nav-cta">Work Together</a></li>
+    </ul>
+  </nav>
+
+  <div class="contact-page">
+
+    <!-- LEFT -->
+    <div class="contact-info fade-in">
+      <p class="section-label">Work With Me</p>
+      <h1 class="contact-title">Let's make something worth talking about</h1>
+      <p class="contact-desc">Logo, brand kit, AI art, a song, event graphics, or something I haven't even thought of yet &mdash; I'm in. Tell me what you need and we'll figure out the rest together.</p>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">&#128140;</div>
+        <div class="contact-detail-text">
+          <a href="mailto:flutterpressdesigns@gmail.com">flutterpressdesigns@gmail.com</a>
+          <p>Best way to reach me</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">&#127968;</div>
+        <div class="contact-detail-text">
+          <a href="#">New Braunfels, TX</a>
+          <p>Working remotely with clients everywhere</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">&#11088;</div>
+        <div class="contact-detail-text">
+          <a href="https://www.etsy.com/shop/PaintedNights" target="_blank" rel="noopener">Etsy: Painted Nights</a>
+          <p>Canvas prints &amp; digital art</p>
+        </div>
+      </div>
+
+      <div class="social-row">
+        <a href="https://www.tiktok.com/@gweenbeanies" target="_blank" rel="noopener" class="social-pill">&#127925; TikTok</a>
+        <a href="https://www.facebook.com/FlutterPressDesigns" target="_blank" rel="noopener" class="social-pill">&#128216; Facebook</a>
+        <a href="https://www.facebook.com/iOSierra" target="_blank" rel="noopener" class="social-pill">&#128156; iOSierra</a>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="contact-form-wrap fade-in">
+      <h2 class="form-title">Send me a message</h2>
+      <form action="https://formspree.io/f/xwvzevwo" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="first_name" placeholder="Your name" required/>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="last_name" placeholder="Last name"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="your@email.com" required/>
+        </div>
+        <div class="form-group">
+          <label>What do you need?</label>
+          <select name="service">
+            <option value="">Select a service...</option>
+            <option>Brand Design &amp; Logo</option>
+            <option>Event Graphics</option>
+            <option>AI-Generated Images</option>
+            <option>Custom Music</option>
+            <option>Digital Print / Wall Art</option>
+            <option>Social Media Content</option>
+            <option>Something Else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell me more</label>
+          <textarea name="message" placeholder="Describe what you're working on, the vibe you're going for, your timeline, or anything else that helps me understand what you need." required></textarea>
+        </div>
+        <div class="form-group">
+          <label>How did you find me? (optional)</label>
+          <select name="referral">
+            <option value="">Select one...</option>
+            <option>Etsy</option>
+            <option>Facebook</option>
+            <option>TikTok</option>
+            <option>Google</option>
+            <option>Word of Mouth</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit">Send It ✦</button>
+        <p class="form-note">I'll get back to you within 1&ndash;2 business days. No pressure, no pitch, just a real conversation about what you need.</p>
+      </form>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-name">Flutter Press Designs</div>
+    <p class="footer-sub">Brand &middot; Event &middot; Lifestyle &middot; New Braunfels, TX</p>
+    <div class="footer-links">
+      <a href="mailto:flutterpressdesigns@gmail.com">flutterpressdesigns@gmail.com</a>
+      <a href="https://www.etsy.com/shop/PaintedNights" target="_blank" rel="noopener">Etsy: Painted Nights</a>
+      <a href="https://www.tiktok.com/@gweenbeanies" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/FlutterPressDesigns" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Flutter Press Designs. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const faders=document.querySelectorAll('.fade-in');
+    const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:0.1});
+    faders.forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>

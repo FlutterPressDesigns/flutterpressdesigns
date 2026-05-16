@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Flutter Press Designs</title>
+  <meta name="description" content="Meet Cece — the multi-passionate creative behind Flutter Press Designs in New Braunfels, TX."/>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--pink:#f472b6;--lavender:#c084fc;--indigo:#818cf8;--cyan:#22d3ee;--bg:#fdf8ff;--bg2:#fef0f8;--bg3:#f5eeff;--text:#2d1a3e;--text-dim:#7c6a8e;--card-bg:#ffffff;--card-border:rgba(192,132,252,0.18);--dark:#04020c;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Quicksand',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:70px;background:rgba(253,248,255,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(192,132,252,0.15);}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .nav-logo-mark{width:52px;height:52px;border-radius:50%;border:2px solid var(--pink);overflow:hidden;background:#04020c;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .nav-logo-mark img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+    .nav-name{font-family:'Sacramento',cursive;font-size:1.65rem;background:linear-gradient(90deg,var(--pink),var(--lavender),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap;}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+    .nav-links a{text-decoration:none;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--pink);}
+    .nav-cta{background:linear-gradient(135deg,var(--pink),var(--lavender));color:#fff!important;padding:10px 22px;border-radius:30px;font-weight:700!important;transition:opacity 0.2s,transform 0.2s!important;}
+    .nav-cta:hover{opacity:0.88;transform:translateY(-1px);}
+
+    /* ABOUT HERO */
+    .about-hero{padding:140px 40px 0;background:var(--bg2);overflow:hidden;}
+    .about-hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;}
+    .about-img-frame{border-radius:18px 18px 0 0;overflow:hidden;aspect-ratio:3/4;position:relative;box-shadow:0 20px 60px rgba(192,132,252,0.18);}
+    .about-img-frame img{width:100%;height:100%;object-fit:cover;object-position:top;}
+    .about-img-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(4,2,12,0.65) 0%,transparent 45%);}
+    .about-img-label{position:absolute;bottom:24px;left:24px;z-index:3;}
+    .label-small{font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.65);display:block;margin-bottom:4px;}
+    .label-big{font-family:'Sacramento',cursive;font-size:2.4rem;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,0.6);}
+    .about-hero-text{padding-bottom:60px;}
+    .section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink);margin-bottom:14px;}
+    .about-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
+    .about-tag{display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:30px;background:rgba(192,132,252,0.08);border:1px solid rgba(192,132,252,0.2);font-size:0.8rem;font-weight:600;color:var(--text-dim);}
+    .about-quote{font-style:italic;font-size:1.05rem;color:var(--pink);border-left:3px solid var(--pink);padding-left:20px;margin-bottom:24px;line-height:1.65;}
+    .about-hero-text p{font-size:0.95rem;color:var(--text-dim);line-height:1.85;margin-bottom:14px;}
+
+    /* BIO SECTION */
+    .bio-section{padding:80px 40px;max-width:860px;margin:0 auto;}
+    .bio-section p{font-size:1rem;color:var(--text-dim);line-height:1.9;margin-bottom:20px;}
+    .bio-section h2{font-family:'Georgia',serif;font-style:italic;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--text);margin-bottom:20px;margin-top:48px;}
+
+    /* BOOK SECTION */
+    .book-section{background:var(--bg3);padding:80px 40px;}
+    .book-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;}
+    .book-cover{width:180px;height:240px;border-radius:8px;background:linear-gradient(135deg,rgba(192,132,252,0.15),rgba(244,114,182,0.1));border:1px solid var(--card-border);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;box-shadow:4px 4px 20px rgba(192,132,252,0.12);}
+    .book-cover-title{font-family:'Georgia',serif;font-style:italic;font-size:1rem;color:var(--text);line-height:1.3;margin-bottom:8px;}
+    .book-cover-author{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);}
+    .book-cover-icon{font-size:2rem;margin-bottom:12px;}
+    .book-text .section-label{margin-bottom:10px;}
+    .book-text h2{font-family:'Georgia',serif;font-style:italic;font-size:clamp(1.4rem,3vw,2rem);color:var(--text);margin-bottom:16px;}
+    .book-text p{font-size:0.95rem;color:var(--text-dim);line-height:1.85;margin-bottom:12px;}
+    .book-note{font-size:0.8rem;color:var(--text-dim);font-style:italic;opacity:0.7;margin-top:16px;}
+
+    /* CONNECT */
+    .connect-section{padding:80px 40px;background:var(--bg2);text-align:center;}
+    .connect-section h2{font-family:'Georgia',serif;font-style:italic;font-size:clamp(1.8rem,4vw,2.5rem);color:var(--text);margin-bottom:16px;}
+    .connect-section p{font-size:1rem;color:var(--text-dim);margin-bottom:48px;line-height:1.8;}
+    .social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto;}
+    .social-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:28px 20px;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:10px;box-shadow:0 2px 16px rgba(192,132,252,0.07);transition:border-color 0.3s,transform 0.3s;}
+    .social-card:hover{border-color:var(--lavender);transform:translateY(-3px);}
+    .social-card-platform{font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);}
+    .social-card-icon{width:50px;height:50px;border-radius:50%;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;}
+    .social-card h4{font-weight:700;font-size:0.95rem;color:var(--text);}
+    .social-card p{font-size:0.8rem;color:var(--text-dim);}
+
+    .cta-band{background:linear-gradient(135deg,var(--bg2),var(--bg3));padding:80px 40px;text-align:center;}
+    .cta-band h2{font-family:'Georgia',serif;font-style:italic;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--text);margin-bottom:16px;}
+    .cta-band p{font-size:1rem;color:var(--text-dim);margin-bottom:36px;line-height:1.8;}
+    .btn-primary{background:linear-gradient(135deg,var(--pink),var(--lavender));color:#fff;padding:12px 28px;border-radius:40px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:0.88rem;text-decoration:none;box-shadow:0 4px 20px rgba(244,114,182,0.25);transition:transform 0.2s;display:inline-block;}
+    .btn-primary:hover{transform:translateY(-2px);}
+
+    footer{background:var(--dark);border-top:1px solid rgba(244,114,182,0.1);padding:60px 40px 40px;text-align:center;}
+    .footer-name{font-family:'Sacramento',cursive;font-size:2.4rem;background:linear-gradient(90deg,var(--pink),var(--lavender),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px;}
+    .footer-sub{font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#7c6a8e;margin-bottom:24px;}
+    .footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;}
+    .footer-links a{font-size:0.85rem;color:#7c6a8e;text-decoration:none;transition:color 0.2s;}
+    .footer-links a:hover{color:var(--pink);}
+    .footer-copy{font-size:0.75rem;color:rgba(124,106,142,0.4);}
+
+    .fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .fade-in.visible{opacity:1;transform:none;}
+
+    @media(max-width:860px){.about-hero-inner{grid-template-columns:1fr;gap:40px;}.about-img-frame{aspect-ratio:4/3;border-radius:18px;}.book-inner{grid-template-columns:1fr;}.book-cover{width:140px;height:180px;margin:0 auto;}.social-grid{grid-template-columns:1fr;}}
+    @media(max-width:700px){nav{padding:0 20px;}.nav-links{display:none;}.about-hero{padding:120px 24px 0;}.bio-section,.connect-section,.book-section{padding:60px 24px;}}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-mark"><img src="fpd-logo.jpeg" alt="Flutter Press Designs hummingbird logo"/></span>
+      <span class="nav-name">Flutter Press Designs</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="contact.html" class="nav-cta">Work Together</a></li>
+    </ul>
+  </nav>
+
+  <!-- ABOUT HERO -->
+  <div class="about-hero">
+    <div class="about-hero-inner">
+      <div class="about-img-frame fade-in">
+        <img src="disney.png" alt="Cece at Disney World"/>
+        <div class="about-img-label">
+          <span class="label-small">The Artist</span>
+          <span class="label-big">Hi, I'm Cece</span>
+        </div>
+      </div>
+      <div class="about-hero-text fade-in">
+        <p class="section-label">About</p>
+        <div class="about-tags">
+          <span class="about-tag">&#11088; Swiftie Era</span>
+          <span class="about-tag">&#127984; Disney Adult</span>
+          <span class="about-tag">&#128062; Animal Lover</span>
+          <span class="about-tag">&#129504; Neurodivergent</span>
+          <span class="about-tag">&#128300; Science Is Cool</span>
+        </div>
+        <blockquote class="about-quote">"I don't just make things look pretty. I make them feel like you."</blockquote>
+        <p>I'm a multi-passionate creative based in New Braunfels, Texas &mdash; autistic, curious, and fully committed to going down rabbit holes at 2am in the name of a better design.</p>
+        <p>Flutter Press Designs is where my obsessions live: brand identity, AI art, music creation, digital prints, and the endlessly fun chaos of making things from scratch.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIO -->
+  <div class="bio-section fade-in">
+    <p>I'm a Swiftie, a Disney Adult (that photo is proof), and an animal lover who thinks science is genuinely underrated. When I'm not designing, I'm probably making something weird with AI, watching animal videos, or listening to Taylor Swift on repeat and calling it market research.</p>
+    <p>Whether you need a logo, a custom song, or wall art for the moody corner of your living room &mdash; you've found the right weirdo for the job.</p>
+    <h2>What I actually do all day</h2>
+    <p>Flutter Press Designs covers more ground than most studios because I genuinely love all of it. Brand identities, event graphics, AI art commissions, custom music, canvas prints through Painted Nights on Etsy, and social media content design. Each one scratches a different creative itch and I'm not interested in picking just one.</p>
+    <p>I'm based in New Braunfels, TX and work remotely with clients everywhere. Most projects start with a conversation &mdash; tell me what you need and we'll figure out the rest.</p>
+  </div>
+
+  <!-- BOOK SECTION -->
+  <div class="book-section">
+    <div class="book-inner fade-in">
+      <div class="book-cover">
+        <div class="book-cover-icon">&#128011;</div>
+        <div class="book-cover-title">Wren Knows the Whale</div>
+        <div class="book-cover-author">Sierra Poole</div>
+      </div>
+      <div class="book-text">
+        <p class="section-label">Also: I Write Books</p>
+        <h2>Wren Knows the Whale</h2>
+        <p>Under my given name Sierra Poole, I write children's picture books. My debut book <em>Wren Knows the Whale</em> is the first in the Wren Knows series &mdash; a story about a little girl who believes in something big, even when no one else does.</p>
+        <p>Currently pursuing traditional publishing. Query letters submitted. Fingers crossed.</p>
+        <p class="book-note">This one lives outside of Flutter Press Designs &mdash; two different creative worlds, both very much mine.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONNECT -->
+  <div class="connect-section">
+    <h2 class="fade-in">Find me in the wild</h2>
+    <p class="fade-in">Chaotic AI experiments, creative brain dumps, and the occasional unhinged idea that somehow works out perfectly.</p>
+    <div class="social-grid">
+      <a href="https://www.tiktok.com/@gweenbeanies" target="_blank" rel="noopener" class="social-card fade-in">
+        <span class="social-card-platform">TikTok</span>
+        <div class="social-card-icon">&#127925;</div>
+        <h4>@gweenbeanies</h4>
+        <p>Chaotic AI experiments &amp; brain dumps</p>
+      </a>
+      <a href="https://www.facebook.com/FlutterPressDesigns" target="_blank" rel="noopener" class="social-card fade-in">
+        <span class="social-card-platform">Facebook &mdash; Business</span>
+        <div class="social-card-icon">&#128216;</div>
+        <h4>Flutter Press Designs</h4>
+        <p>New releases &amp; creative updates</p>
+      </a>
+      <a href="https://www.facebook.com/iOSierra" target="_blank" rel="noopener" class="social-card fade-in">
+        <span class="social-card-platform">Facebook &mdash; Personal</span>
+        <div class="social-card-icon">&#128156;</div>
+        <h4>iOSierra</h4>
+        <p>The human behind the hummingbird</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <h2>Want to work together?</h2>
+    <p>Send me a message and let's build something worth remembering.</p>
+    <a href="contact.html" class="btn-primary">Send Me a Message &rarr;</a>
+  </div>
+
+  <footer>
+    <div class="footer-name">Flutter Press Designs</div>
+    <p class="footer-sub">Brand &middot; Event &middot; Lifestyle &middot; New Braunfels, TX</p>
+    <div class="footer-links">
+      <a href="mailto:flutterpressdesigns@gmail.com">flutterpressdesigns@gmail.com</a>
+      <a href="https://www.etsy.com/shop/PaintedNights" target="_blank" rel="noopener">Etsy: Painted Nights</a>
+      <a href="https://www.tiktok.com/@gweenbeanies" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/FlutterPressDesigns" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Flutter Press Designs. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const faders=document.querySelectorAll('.fade-in');
+    const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:0.1});
+    faders.forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>
