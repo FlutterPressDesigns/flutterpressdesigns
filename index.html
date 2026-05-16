@@ -367,7 +367,7 @@
           </div>
           <span class="player-time" id="totalTime">0:00</span>
         </div>
-        <p class="music-note">Press play or click anywhere on the page &#10024;</p>
+        <p class="music-note">Press play to listen &#10024;</p>
         <a href="music.html" class="btn-commission">Hear More &amp; Commission</a>
       </div>
     </div>
@@ -422,8 +422,6 @@
     audio.addEventListener('pause',()=>{playBtn.innerHTML='&#9654;';});
     function togglePlay(){if(audio.paused)audio.play();else audio.pause();}
     function seekAudio(e){const r=document.getElementById('progressWrap').getBoundingClientRect();audio.currentTime=((e.clientX-r.left)/r.width)*audio.duration;}
-    let hasAutoStarted=false;
-    document.addEventListener('click',(e)=>{if(hasAutoStarted)return;if(e.target.closest('#playBtn')||e.target.closest('.progress-bar-wrap'))return;hasAutoStarted=true;audio.play().catch(()=>{});});
   </script>
 </body>
 </html>
